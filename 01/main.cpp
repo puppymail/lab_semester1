@@ -1,10 +1,10 @@
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
-#include <time.h>
-#include <math.h>
+#include <ctime>
+#include <cmath>
 #include <string>
-#include "prompt_utils.h"
+#include "../common/prompt_utils.h"
 
 // amount of examples to provide for binary strings
 #define EXAMPLE_AMOUNT 1
