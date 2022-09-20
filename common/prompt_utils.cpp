@@ -6,6 +6,9 @@
 #define BOOL_PROMPT_ERROR_MESSAGE "Please, enter 'Y' or 'N': "
 #define BOOL_PROMPT_QUERY " (Y/N): "
 
+#define CHAR_PROMPT_ERROR_MESSAGE "Please, enter a valid character: "
+#define CHAR_PROMPT_QUERY ": "
+
 bool prompt_for_bool(std::string &prompt) {
     char response;
 
@@ -51,6 +54,46 @@ bool prompt_for_bool(const char* prompt) {
             
                 std::cout << BOOL_PROMPT_ERROR_MESSAGE;
         }
+    }
+}
+
+char prompt_for_char(std::string &prompt) {
+    char response;
+
+    std::cout << prompt << CHAR_PROMPT_QUERY;
+
+    while (true) {
+        std::cin >> response;
+
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        
+            std::cout << CHAR_PROMPT_ERROR_MESSAGE;
+            continue;
+        }
+
+        return response;
+    }
+}
+
+char prompt_for_char(const char* prompt) {
+    char response;
+
+    std::cout << prompt << CHAR_PROMPT_QUERY;
+
+    while (true) {
+        std::cin >> response;
+
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        
+            std::cout << CHAR_PROMPT_ERROR_MESSAGE;
+            continue;
+        }
+
+        return response;
     }
 }
 

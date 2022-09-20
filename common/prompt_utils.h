@@ -9,6 +9,10 @@ bool prompt_for_bool(std::string &prompt);
 
 bool prompt_for_bool(const char* prompt);
 
+char prompt_for_char(std::string &prompt);
+
+char prompt_for_char(const char* prompt);
+
 template <typename N>
 N prompt_for_number(std::string& prompt) {
     N response;
