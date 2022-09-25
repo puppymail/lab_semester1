@@ -1,3 +1,6 @@
+#ifndef _H_PRINT_UTILS
+#define _H_PRINT_UTILS
+#include <cstddef>
 #include <iostream>
 #include <iomanip>
 #include <cstddef>
@@ -23,3 +26,5 @@ template <typename T>
 void print_matrix(T *matrix_ptr, const size_t &size) {
     print_matrix(matrix_ptr, size, size);
 }
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef _H_ARRAY_UTILS
+#define _H_ARRAY_UTILS
 #include <cstddef>
 
 const int QUADRANTS[2][2] = { {2, 1},
@@ -70,3 +72,5 @@ void sort_comb(int *matrix_ptr,
 void sort_insert(int *matrix_ptr,
                  const size_t &width,
                  const size_t &heigth);
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef _H_PROMPT_UTILS
+#define _H_PROMPT_UTILS
 #include <iostream>
 #include <math.h>
 #include <string>
@@ -106,3 +108,5 @@ N prompt_for_number(const char* prompt, const N lower_bound, const N upper_bound
         return response;
     }
 }
+
+#endif
