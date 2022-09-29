@@ -7,16 +7,25 @@
 #include "03/lab03.h"
 #include "04/lab04.h"
 
+#if defined(_WIN32) || defined(_WIN64)
+    #include <windows.h>
+#endif
+
 int main() {
     std::setlocale(LC_ALL, "Russian");
+
+    #if defined(_WIN32) || defined(_WIN64)
+        SetConsoleOutputCP(1251);
+        SetConsoleCP(1251);
+    #endif
 
     unsigned short int choice;
     while (true) {
         std::cout << "\nChoices are:\n"
-                  << "1: Ð¢Ð˜ÐŸÐ« Ð”ÐÐÐÐ«Ð¥ Ð˜ Ð˜Ð¥ Ð’ÐÐ£Ð¢Ð Ð•ÐÐÐ•Ð• ÐŸÐ Ð•Ð”Ð¡Ð¢ÐÐ’Ð›Ð•ÐÐ˜Ð• Ð’ ÐŸÐÐœÐ¯Ð¢Ð˜\n"
-                  << "2: ÐžÐ”ÐÐžÐœÐ•Ð ÐÐ«Ð• Ð¡Ð¢ÐÐ¢Ð˜Ð§Ð•Ð¡ÐšÐ˜Ð• ÐœÐÐ¡Ð¡Ð˜Ð’Ð«\n"
-                  << "3: Ð£ÐšÐÐ—ÐÐ¢Ð•Ð›Ð˜\n"
-                  << "4: Ð¢Ð•ÐšÐ¡Ð¢ÐžÐ’Ð«Ð• Ð¡Ð¢Ð ÐžÐšÐ˜ ÐšÐÐš ÐœÐÐ¡Ð¡Ð˜Ð’Ð« Ð¡Ð˜ÐœÐ’ÐžÐ›ÐžÐ’\n";
+                  << "1: ÒÈÏÛ ÄÀÍÍÛÕ È ÈÕ ÂÍÓÒÐÅÍÍÅÅ ÏÐÅÄÑÒÀÂËÅÍÈÅ Â ÏÀÌßÒÈ\n"
+                  << "2: ÎÄÍÎÌÅÐÍÛÅ ÑÒÀÒÈ×ÅÑÊÈÅ ÌÀÑÑÈÂÛ\n"
+                  << "3: ÓÊÀÇÀÒÅËÈ\n"
+                  << "4: ÒÅÊÑÒÎÂÛÅ ÑÒÐÎÊÈ ÊÀÊ ÌÀÑÑÈÂÛ ÑÈÌÂÎËÎÂ\n";
         choice = prompt_for_number<unsigned short int>("Please choose lab (1, 2, 3, 4)", 1, 4);
         switch (choice) {
             case 1:

@@ -87,8 +87,11 @@ void edit_text(std::string &str) {
                 } else {
                     state = 0;
                     if (word_size > WORD_SIZE_MAX) {
-                        str.erase(word_start_pos - 1, pos - word_start_pos + 1);
-                        pos -= (pos - word_start_pos + 1);
+                        str.erase(word_start_pos, pos - word_start_pos);
+                        pos -= (pos - word_start_pos);
+                        if (pos > 0) {
+                            str.erase(pos - 1, 1);
+                        }
                     }
                     word_size = 0;
                     continue;
@@ -126,7 +129,7 @@ void edit_text(std::string &str) {
                     }
                 } else {
                     if (dot_count > 3) {
-                        str.erase(pos - (dot_count - 3), (dot_count - 3));
+                        str.erase(pos - (dot_count - 3));
                         dot_count = 3;
                     }
                     if (dot_count != 3) {
